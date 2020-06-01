@@ -1,0 +1,62 @@
+{
+    "name": "textutils",
+    "displayName": "TextUtils",
+    "description": "Text manipulation utilities",
+    "version": "0.0.1",
+    "publisher": "kodybrown",
+    "repository": "https://github.com/kodybrown/vscode-textutils",
+    "engines": {
+        "vscode": "^1.1.0"
+    },
+    "author": {
+        "name": "Kody Brown",
+        "email": "thewizard@wasatchwizard.com",
+        "url": "https://wasatchwizard.com"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:textutils.reverseLines",
+        "onCommand:textutils.sortLinesAscending",
+        "onCommand:textutils.sortLinesDescending",
+        "onCommand:textutils.uniqueLines"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [{
+            "command": "textutils.reverseLines",
+            "title": "textutils: Reverse Lines"
+        }, {
+            "command": "textutils.sortLinesAscending",
+            "title": "textutils: Sort Lines (Ascending)"
+        }, {
+            "command": "textutils.sortLinesDescending",
+            "title": "textutils: Sort Lines (Descending)"
+        }, {
+            "command": "textutils.uniqueLines",
+            "title": "textutils: Unique Lines"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint src --ext ts",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.45.0",
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.0",
+        "eslint": "^6.8.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.1.2",
+        "typescript": "^3.8.3",
+        "vscode-test": "^1.3.0"
+    }
+}
